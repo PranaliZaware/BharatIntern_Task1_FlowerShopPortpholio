@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Categories</title>
+    <style>
+        /* Basic styles for clarity */
+    
+        body {
+            background-image: url(back1.jpg);
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .categories {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .flower-list {
+            font-size: 40px;
+            text-align: center;
+            display: none;
+        }
+
+        .flower-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .flower-list ul li {
+            text-align: center;
+            font-size: 30px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Flower Categories</h1>
+
+    <!-- Category buttons -->
+    <div class="categories">
+        <button onclick="showCategory('roses')">Roses</button>
+        <button onclick="showCategory('tulips')">Tulips</button>
+        <button onclick="showCategory('daisies')">Daisies</button>
+    </div>
+
+    <!-- Flower lists -->
+    <div id="roses" class="flower-list">
+        <h2>Roses</h2>
+        <ul><b>
+            <li>Red Rose</li>
+            <li>White Rose</li>
+            <li>Pink Rose</li></b>
+        </ul>
+    </div>
+
+    <div id="tulips" class="flower-list">
+        <h2>Tulips</h2>
+        <ul><b>
+            <li>Red Tulip</li>
+            <li>Yellow Tulip</li>
+            <li>Orange Tulip</li></b>
+        </ul>
+    </div>
+
+    <div id="daisies" class="flower-list">
+        <h2>Daisies</h2>
+        <ul><b>
+            <li>White Daisy</li>
+            <li>Yellow Daisy</li>
+            <li>Pink Daisy</li></b>
+        </ul>
+    </div>
+
+    <script>
+        function showCategory(categoryId) {
+            // Hide all flower lists
+            const flowerLists = document.querySelectorAll('.flower-list');
+            flowerLists.forEach(list => {
+                list.style.display = 'none';
+            });
+
+            // Show the selected flower list
+            const selectedList = document.getElementById(categoryId);
+            if (selectedList) {
+                selectedList.style.display = 'block';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
